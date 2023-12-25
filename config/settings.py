@@ -1,8 +1,12 @@
 from pathlib import Path
+from dotenv import load_dotenv, dotenv_values
+
+load_dotenv()
+envs = dotenv_values()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-#c9z!*+k4_*f(eu^d(p&p4nck32k=-)+v^zyd@pi0ivun(9vpr'
+SECRET_KEY = envs.get('DJANGO_SECURITY_KEY')
 
 DEBUG = True
 
@@ -34,7 +38,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
