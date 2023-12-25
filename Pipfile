@@ -5,6 +5,10 @@ name = "pypi"
 
 [packages]
 django = "*"
+python-dotenv = "*"
+beautifulsoup4 = "*"
+requests = "*"
+django-allauth = "==0.45.0"
 
 [dev-packages]
 
