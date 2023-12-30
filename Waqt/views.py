@@ -6,6 +6,10 @@ from requests import get
 
 # Create your views here.
 def home(request):
+    return HttpResponse('salam alekum!')
+
+
+def NamazTimesViews(request):
     # bs4 scraping
     url = "http://www.islom.uz"
     response = get(url)
