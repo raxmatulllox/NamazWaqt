@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaz Waqtlari</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <!-- cdn fonts google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@1,300;1,400&family=Nunito:ital,wght@0,400;0,500;1,400;1,500&family=Ubuntu:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'img/images.png' %}" type="image/x-icon">
+    {% block header %}  {% endblock header %}
+</head>
+<body>
+    <nav>
+        <a href="" class="logo">Namaz Waqt</a>
+        <div class="nav-auth">
+            <a href="" class="navbar find-mesjid">Masjidni Topish</a>
+            <a href="" class="navbar my-city">Shahar kiritish!</a>
+            <a href="accounts/login/"class="navbar auth-google">Google orqali Kirish</a>
+        </div>        
+    </nav>
+    {% block content %}  {% endblock content %}
+</body>
+</html>
