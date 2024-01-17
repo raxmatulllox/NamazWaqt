@@ -1,4 +1,81 @@
 {% extends "Waqt/base.html" %}
+{% load static %}
 
 {% block content %}
+<div class="header">
+    <div class="utils">
+        <p>https://islom.uz/maqola/21679</p>
+        <div class="country">
+            <label for="mintaqa">Shahar: 
+            <select id="mintaqa" size="1" onchange="window.location.href=this.value;">
+                <option value="">Mintaqani tanlang!</option>
+                <option value="/">Toshkent</option>
+                <option value="{% url 'andijon' %}">Andijon</option>
+                <option value="/">Buxoro</option>
+                <option value="/">Denov</option>
+                <option value="/">Guliston</option>
+                <option value="/">Jizzax</option>
+                <option value="/">Marg'ilon</option>
+                <option value="/">Namangan</option>
+                <option value="/">Navoiy</option>
+                <option value="/">Nukus</option>
+                <option value="/">Qarshi</option>
+                <option value="/">Qo'qon</option>
+                <option value="/">Samarqand</option>
+                <option value="/">Xiva</option>
+            </select>   </label>
+        </div>
+    </div>
+    <div class="slogan">
+        <div class="inner-slogan">
+            <p class="slogan-p">Shiorimiz: </p>
+            <p class="context">Ahli sunna val-jamoa mazhabi asosida pok aqiyda va musaffo Islomga intilish, Qur'on va sunnatni o‘rganib, amal qilish, islomiy ma'rifat taratish, salafi solih – ulug‘ mujtahidlarga ergashish, kеngbag‘irlik va birodarlik ruhini tarqatish.</p>
+        </div>
+        <img class="xazrat-img" src="{% static 'img/Shayh_Muhammad_Sodiq.jpg' %}" alt="">
+    </div>
+</div>
+<div class="container">
+    <div class="time-prayer">
+        <img class="prayer-img" src="{% static 'img/bomdod.png' %}" alt="img">
+        <p class="time">{{ bomdod }}</p>
+        <p class="prayer-name">Bomdod</p>
+        <p class="city">{{ city }}</p>
+    </div>
+    <div class="time-prayer">
+        <img class="prayer-img" src="{% static 'img/quyosh.png' %}" alt="img">
+        <p class="time">{{ quyosh }}</p>
+        <p class="prayer-name">Quyosh</p>
+        <p class="city">{{ city }}</p>
+    </div>
+    <div class="time-prayer">
+        <img class="prayer-img" src="{% static 'img/peshin.png' %}" alt="img">
+        <p class="time">{{ peshin }}</p>
+        <p class="prayer-name">Peshin</p>
+        <p class="city">{{ city }}</p>
+    </div>
+    <div class="time-prayer">
+        <img class="prayer-img" src="{% static 'img/asr.png' %}" alt="img">
+        <p class="time">{{ asr }}</p>
+        <p class="prayer-name">Asr</p>
+        <p class="city">{{ city }}</p>
+    </div>
+    <div class="time-prayer">
+        <img class="prayer-img" src="{% static 'img/shom.png' %}" alt="img">
+        <p class="time">{{ shom }}</p>
+        <p class="prayer-name">Shom</p>
+        <p class="city">{{ city }}</p>
+    </div>
+    <div class="time-prayer">
+        <img class="prayer-img" src="{% static 'img/hufton.png' %}" alt="img">
+        <p class="time">{{ hufton }}</p>
+        <p class="prayer-name">Hufton</p>
+        <p class="city">{{ city }}</p>
+    </div>
+    <div class="time-prayer">
+        <img class="prayer-img" src="{% static 'img/fajr.png' %}" alt="img">
+        <p class="time">01:40</p>
+        <p class="prayer-name">Tahajjud</p>
+        <p class="city">{{ city }}</p>
+    </div>
+</div>
 {% endblock content %}
