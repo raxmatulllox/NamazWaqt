@@ -1,1 +1,159 @@
-body {    background-color: black;    color: white;    margin: 60px 300px;}
+body {
+    background-color: rgb(0, 27, 50);
+    color: white;
+    margin: 20px 100px;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+/* font-family: 'Genos', sans-serif;
+font-family: 'Nunito Sans', sans-serif;
+font-family: 'Orbitron', sans-serif;
+font-family: 'Tilt Neon', sans-serif;
+font-family: 'Ubuntu', sans-serif; */
+
+a {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 7px;
+    border-bottom: 3px solid black;
+}
+
+.logo {
+    font-size: 30px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.navbar {
+    margin: 0 30px;
+}
+
+.header {
+    background-color:rgb(19, 41, 60) ;
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    justify-content: space-between;
+    border-radius: 7px;
+
+}
+
+.utils {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: space-between;
+}
+
+.slogan {
+    display: flex;
+    flex-direction: row;
+}
+
+.inner-slogan {
+    margin: 50px 0 10px 0; 
+    padding: 7px;
+    background-color: rgb(10, 30, 47);
+    border-radius: 10px;
+}
+
+.slogan-p {
+    text-align: center;
+}
+
+/* .context {
+    margin-top: 40px;
+} */
+
+.xazrat-img {
+    margin: 10px 10px 0 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 70px;
+    transform: translateX(-50px);
+}
+
+.container {
+    background-color:rgb(19, 41, 60) ;
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    justify-content: space-around;
+    border-radius: 7px;
+
+}
+ 
+.time-prayer {
+    margin: 10px;
+    background-color: rgb(2, 33, 59);
+    border-radius: 8px;
+    width: 160px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.prayer-img {
+    margin-top: 14px;
+    width: 120px;
+    height: 120px;
+    border-radius: 15px;
+
+}
+
+.time {
+    margin: 4px 0 0 0;
+    padding: 4px;
+    font-size: 40px;
+    
+    
+    
+    font-family: 'Tilt Neon', sans-serif;
+}
+
+.prayer-name {
+    font-family: 'Ubuntu', sans-serif; 
+    margin: 0;
+    color: rgba(67, 113, 89, 0.826);
+    font-size: 25px;
+}
+
+.city {
+    margin: 0;
+    padding: 0;
+}
+
+.country {
+    transform: translateY(-5px);
+}
+
+label {
+    border-radius: 7px;
+    padding: 7px;
+    background-color: rgb(2, 33, 59);
+}
+
+select {
+    border-radius: 4px;
+    padding: 1px;
+    color: aliceblue;
+    border: 2px solid rgba(2, 59, 11, 0.418);
+    background-color: rgb(2, 33, 59);
+}
+
+option {
+    border-radius: 5px;
+    font-size: 17px;
+    /* margin: 10px; */
+    /* padding: 7px; */
+    background-color: rgb(2, 33, 59);
+    color: aliceblue;
+}
+
