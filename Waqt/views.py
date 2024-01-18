@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from bs4 import BeautifulSoup
-from django.utils.timezone import now
 from requests import get
+
+from . import scripts
 
 
 # Create your views here.
@@ -21,29 +21,60 @@ def NamazTimesViews(request):
 
 
 def AndijonNamazWaqt(request):
-    url2 = "https://namozvaqtlari.com/namoz/17-xiva-namoz-vaqtlari-bugungi-namoz-vaqti.html"
-    response2 = get(url2)
-    soup2 = BeautifulSoup(response2.text, 'html.parser')
-    element2 = soup2.find('div', class_='namoz-time')
-    result = element2.text.split()
-
-    return render(request, 'Waqt/index.html', {'city': result[2], 'bomdod': result[1],
-                                               'quyosh': result[4], 'peshin': result[7], 'asr': result[10],
-                                               'shom': result[13], 'hufton': result[16]})
+    return render(request, 'Waqt/index.html', context=scripts.andijan())
 
 
-# ['Bomdod', '07:01', 'Xiva', 'Quyosh', '08:22', 'Xiva', 
-# 'Peshin', '13:08', 'Xiva', 'Asr', '16:14', 'Xiva', 
-# 'Shom', '18:00', 'Xiva', 'Xufton', '19:17', 'Xiva']
+def BuxoroNamazWaqt(request):
+    return render(request, 'Waqt/index.html', context=scripts.buxoro())
 
 
-# url1 = "https://namozvaqtlari.com/namoz/15-qarshi-namoz-vaqtlari-bugungi-namoz-vaqti.html"
-# response1 = get(url1)
-# soup1 = BeautifulSoup(response1.text, 'html.parser')
-# # print(soup1)
-# element1 = soup1.find('div', class_='content')
-# # date_time1 = soup1.find('div', class_='date_time')
+def DenovNamazWaqt(request):
+    return render(request, 'Waqt/index.html', context=scripts.denov())
 
-# # # print(date_time.text)
-# result1 = element1.text.split()
-# print(result1)
+
+def GulistonNamazWaqt(request):
+    return render(request, 'Waqt/index.html', context=scripts.guliston())
+
+
+def JizzaxNamazWaqt(request):
+    return render(request, 'Waqt/index.html', context=scripts.jizzax())
+
+
+def MargilanNamazWaqt(request):
+    return render(request, 'Waqt/index.html', context=scripts.margilan())
+
+
+def NamanganNamazWaqt(request):
+    return render(request, 'Waqt/index.html', context=scripts.namangan())
+
+
+def NukusNamazWaqt(request):
+    return render(request, 'Waqt/index.html', context=scripts.nukus())
+
+
+def NavoiyNamazWaqt(request):
+    return render(request, 'Waqt/index.html', context=scripts.navoiy())
+
+
+def QarshiNamazWaqt(request):
+    return render(request, 'Waqt/index.html', context=scripts.qarshi())
+
+
+def QoqanNamazWaqt(request):
+    return render(request, 'Waqt/index.html', context=scripts.qoqan())
+
+
+def SamarqandNamazWaqt(request):
+    return render(request, 'Waqt/index.html', context=scripts.samarqand())
+
+
+def TermizNamazWaqt(request):
+    return render(request, 'Waqt/index.html', context=scripts.termiz())
+
+
+def XivaNamazWaqt(request):
+    return render(request, 'Waqt/index.html', context=scripts.xiva())
+
+
+def OlmaliqNamazWaqt(request):
+    return render(request, 'Waqt/index.html', context=scripts.olmaliq())
