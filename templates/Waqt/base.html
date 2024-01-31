@@ -13,15 +13,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Genos&family=Nunito+Sans:opsz@6..12&family=Orbitron&family=Tilt+Neon&family=Ubuntu&display=swap" rel="stylesheet">
     <!-- css -->
     <link rel="icon" href="{% static 'img/fav-bg-remove.png' %}" type="image/x-icon">
+    <!-- google api -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCijLm2rlIuGemxLcvo5xrz_SuPgXi6Z8&callback=initMap" async defer></script>
     {% block header %}  {% endblock header %}
 </head>
 <body>
     <nav>
         <a href="" class="logo">Namaz Waqt</a>
         <div class="nav-auth">
-            <a href="" class="navbar find-mesjid">Masjidni Topish</a>
+            <a href="{% url 'map' %}" class="navbar find-mesjid">Masjidni Topish</a>
             <a href="" class="navbar my-city">Qiblani Topish!</a>
-            <a href="accounts/login/"class="navbar auth-google">Google orqali Kirish</a>
+            <a href="accounts/google/login/"class="navbar auth-google">Google orqali Kirish</a>
         </div>        
     </nav>
     {% block content %}  {% endblock content %}
