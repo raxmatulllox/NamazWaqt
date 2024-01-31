@@ -9,6 +9,8 @@ python-dotenv = "*"
 beautifulsoup4 = "*"
 requests = "*"
 django-allauth = "==0.45.0"
+django-leaflet = "*"
+googlemaps = "*"
 
 [dev-packages]
 
