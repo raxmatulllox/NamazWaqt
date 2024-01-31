@@ -92,6 +92,8 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
+GOOGLE_MAPS_API_KEY = envs.get('GOOGLE_API_KEY_MAP')
+
 # Internationalization
 LANGUAGE_CODE = 'en-us'
 
