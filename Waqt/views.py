@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from bs4 import BeautifulSoup
 from requests import get
+from django.conf import settings
 
 from . import scripts
 
@@ -15,7 +16,7 @@ def NamazTimesViews(request):
     result = element.text.split()
 
     # print(result)
-    return render(request, 'Waqt/index.html', {'city': result[2], 'bomdod': result[5],
+    return render(request, 'Waqt/index.html', {'city': 'Toshkent', 'bomdod': result[5],
                                                'quyosh': result[8], 'peshin': result[11], 'asr': result[14],
                                                'shom': result[17], 'hufton': result[20]})
 
@@ -78,3 +79,12 @@ def XivaNamazWaqt(request):
 
 def OlmaliqNamazWaqt(request):
     return render(request, 'Waqt/index.html', context=scripts.olmaliq())
+
+
+def MapView(request):
+    api_key = settings.GOOGLE_MAPS_API_KEY
+    return render(request, 'Waqt/map.html', {'api_key': api_key})
+
+
+def testmap(request):
+    return render(request, 'Waqt/test.html')
