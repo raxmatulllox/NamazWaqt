@@ -23,7 +23,13 @@
         <div class="nav-auth">
             <a href="{% url 'map' %}" class="navbar find-mesjid">Masjidni Topish</a>
             <a href="" class="navbar my-city">Qiblani Topish!</a>
-            <a href="accounts/google/login/"class="navbar auth-google">Google orqali Kirish</a>
+            <a href="{% url 'send-message' %}" class="navbar find-mesjid">Xabarnomani yoqish</a>
+            {% if user.is_authenticated %}
+                <a href="accounts/logout/"class="navbar auth-google">Account</a>
+            {% else %}
+                <a href="accounts/google/login/"class="navbar auth-google">Google orqali Kirish</a>
+            {% endif %}
+
         </div>        
     </nav>
     {% block content %}  {% endblock content %}
