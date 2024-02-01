@@ -1,0 +1,1 @@
+from django import formsfrom .models import SendMessageModelclass SendMessageForm(forms.ModelForm):    class Meta:        model = SendMessageModel        fields = ['city', 'recurrent', 'route']
