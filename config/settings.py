@@ -11,7 +11,7 @@ SECRET_KEY = envs.get('DJANGO_SECURITY_KEY')
 
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'Waqt.apps.WaqtConfig',  # local app
@@ -78,6 +78,7 @@ DATABASES = {
         'USER': os.environ.get('DB_USER'),
         'PASSWORD': os.environ.get('DB_PASSWORD'),
         'PORT': os.environ.get('DB_PORT'),
+        'HOST': 'localhost'
     }
 }
 # else:
