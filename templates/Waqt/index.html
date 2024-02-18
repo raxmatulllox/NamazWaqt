@@ -1,15 +1,25 @@
 {% extends "Waqt/base.html" %}
 {% load static %}
 
+{% block header %}
+<title> {{ city }} - Namaz Waqtlari</title>
+{% endblock header %}
+
 {% block content %}
 <div class="header">
     <div class="utils">
-        <p></p>
+        <div class="vaqt">
+            <p class="vaqt-p hijri">{{ vaqt_hijri }}</p>
+            <p class="vaqt-p mill">{{ vaqt_mill }}</p>
+        </div>
+        <div class="ramazon-container">
+            <p class="ramazon-banner"><a href="" class="ramazon-a">Ramazon 30 kunlik taqvimi*</a></p>
+        </div>
         <div class="country">
             <label for="mintaqa">Shahar: 
             <select id="mintaqa" size="1" onchange="window.location.href=this.value;">
                 <option value="">Mintaqani tanlang!</option>
-                <option value="/">Toshkent</option>
+                <option value="{% url 'home' %}">Toshkent</option>
                 <option value="{% url 'andijon' %}">Andijon</option>
                 <option value="{% url 'buxoro' %}">Buxoro</option>
                 <option value="{% url 'denov' %}">Denov</option>
@@ -74,10 +84,98 @@
         <p class="city">{{ city }}</p>
     </div>
     <div class="time-prayer">
-        <img class="prayer-img" src="{% static 'img/tahajjud.png' %}" alt="img">
+        <img class="prayer-img" src="{% static 'img/fajr.png' %}" alt="img">
         <p class="time">01:40</p>
         <p class="prayer-name">Tahajjud</p>
         <p class="city">{{ city }}</p>
     </div>
+</div>
+<div class="week">
+    <p class="week-slogan">{{ city }} haftalik taqvimi </p>
+    <table class="table-week">
+        <tr>
+            <th class="sarlavha">Kun</th>
+            <th class="sarlavha">Sana</th>
+            <th class="sarlavha">Bomdod</th>
+            <th class="sarlavha">Quyosh</th>
+            <th class="sarlavha">Peshin</th>
+            <th class="sarlavha">Asr</th>
+            <th class="sarlavha">Shom</th>
+            <th class="sarlavha">Xufton</th>
+        </tr>
+        <tr>
+            <th class="hour">{{ day1 }}</th>
+            <td class="hour">{{ day1_num }}</td>
+            <td class="hour">{{ day1_bomdod }}</td>
+            <td class="hour">{{ day1_sun }}</td>
+            <td class="hour">{{ day1_peshin }}</td>
+            <td class="hour">{{ day1_asr }}</td>
+            <td class="hour">{{ day1_shom }}</td>
+            <td class="hour">{{ day1_xufton }}</td>
+        </tr>
+        <tr>
+            <th class="hour-second">{{ day2 }}</th>
+            <td class="hour-second">{{ day2_num }}</td>
+            <td class="hour-second">{{ day2_bomdod }}</td>
+            <td class="hour-second">{{ day2_sun }}</td>
+            <td class="hour-second">{{ day2_peshin }}</td>
+            <td class="hour-second">{{ day2_asr }}</td>
+            <td class="hour-second">{{ day2_shom }}</td>
+            <td class="hour-second">{{ day2_xufton }}</td>
+        </tr>
+        <tr>
+            <th class="hour">{{ day3 }}</th>
+            <td class="hour">{{ day3_num }}</td>
+            <td class="hour">{{ day3_bomdod }}</td>
+            <td class="hour">{{ day3_sun }}</td>
+            <td class="hour">{{ day3_peshin }}</td>
+            <td class="hour">{{ day3_asr }}</td>
+            <td class="hour">{{ day3_shom }}</td>
+            <td class="hour">{{ day3_xufton }}</td>
+        </tr>
+        <tr>
+            <th class="hour-second">{{ day4 }}</th>
+            <td class="hour-second">{{ day4_num }}</td>
+            <td class="hour-second">{{ day4_bomdod }}</td>
+            <td class="hour-second">{{ day4_sun }}</td>
+            <td class="hour-second">{{ day4_peshin }}</td>
+            <td class="hour-second">{{ day4_asr }}</td>
+            <td class="hour-second">{{ day4_shom }}</td>
+            <td class="hour-second">{{ day4_xufton }}</td>
+        </tr>
+        <tr>
+            <th class="hour">{{ day5 }}</th>
+            <td class="hour">{{ day5_num }}</td>
+            <td class="hour">{{ day5_bomdod }}</td>
+            <td class="hour">{{ day5_sun }}</td>
+            <td class="hour">{{ day5_peshin }}</td>
+            <td class="hour">{{ day5_asr }}</td>
+            <td class="hour">{{ day5_shom }}</td>
+            <td class="hour">{{ day5_xufton }}</td>
+        </tr>
+        <tr>
+            <th class="hour-second">{{ day6 }}</th>
+            <td class="hour-second">{{ day6_num }}</td>
+            <td class="hour-second">{{ day6_bomdod }}</td>
+            <td class="hour-second">{{ day6_sun }}</td>
+            <td class="hour-second">{{ day6_peshin }}</td>
+            <td class="hour-second">{{ day6_asr }}</td>
+            <td class="hour-second">{{ day6_shom }}</td>
+            <td class="hour-second">{{ day6_xufton }}</td>
+        </tr>
+        <tr>
+            <th class="hour">{{ day7 }}</th>
+            <td class="hour">{{ day7_num }}</td>
+            <td class="hour">{{ day7_bomdod }}</td>
+            <td class="hour">{{ day7_sun }}</td>
+            <td class="hour">{{ day7_peshin }}</td>
+            <td class="hour">{{ day7_asr }}</td>
+            <td class="hour">{{ day7_shom }}</td>
+            <td class="hour">{{ day7_xufton }}</td>
+        </tr>
+    </table>
+</div>
+<div class="questions-prayer">
+    <p class="news">News 1</p>
 </div>
 {% endblock content %}
