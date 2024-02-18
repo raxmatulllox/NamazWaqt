@@ -11,6 +11,9 @@ requests = "*"
 django-allauth = "==0.45.0"
 django-leaflet = "*"
 googlemaps = "*"
+django-crispy-forms = "*"
+crispy-bootstrap5 = "*"
+schedule = "*"
 
 [dev-packages]
 
