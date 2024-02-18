@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from dotenv import load_dotenv, dotenv_values
 
@@ -63,13 +64,29 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# Database
+#  Database
+DB_NAME = envs.get('DB_NAME')
+DB_USER = envs.get('DB_USER')
+DB_PASSWORD = envs.get('DB_PASSWORD')
+DB_PORT = envs.get('DB_PORT')
+
+# if DB_NAME and DB_USER and DB_PASSWORD:
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get('NAME_DB'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'PORT': os.environ.get('DB_PORT'),
     }
 }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
+#         }
+#     }
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
@@ -117,7 +134,6 @@ LOGOUT_REDIRECT_URL = ''
 
 SOCIALACCOUNT_GOOGLE_CLIENT_ID = '539086064918-v9j2pmpru9ogrc8hfjd0us3hs4o6bnen.apps.googleusercontent.com'
 SOCIALACCOUNT_GOOGLE_SECRET = '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'
-
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
