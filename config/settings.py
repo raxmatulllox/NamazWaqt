@@ -69,6 +69,7 @@ DB_NAME = envs.get('DB_NAME')
 DB_USER = envs.get('DB_USER')
 DB_PASSWORD = envs.get('DB_PASSWORD')
 DB_PORT = envs.get('DB_PORT')
+print(DB_NAME)
 
 # if DB_NAME and DB_USER and DB_PASSWORD:
 DATABASES = {
