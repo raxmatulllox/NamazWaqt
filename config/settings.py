@@ -7,7 +7,7 @@ envs = dotenv_values()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = envs.get('DJANGO_SECURITY_KEY')
+SECRET_KEY = 'django-insecure-#c9z!*+k4_*f(eu^d(p&p4nck32k=-)+v^zyd@pi0ivun(9vpr'
 
 DEBUG = False
 
@@ -75,10 +75,10 @@ print(DB_NAME)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('NAME_DB'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'PORT': os.environ.get('DB_PORT'),
+        'NAME': 'waqt',
+        'USER': 'rahmatjon',
+        'PASSWORD': 'backend.1',
+        'PORT': '5432',
         'HOST': 'localhost'
     }
 }
@@ -126,7 +126,9 @@ USE_I18N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = 'static/'
+STATIC_URL = 'staticfiles/'
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
